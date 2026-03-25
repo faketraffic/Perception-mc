@@ -20,10 +20,11 @@ public class Perception {
     }
 
     public void init() {
-        //System.out.println("Starting " + NAME + " v" + VERSION);
+        // System.out.println("Starting " + NAME + " v" + VERSION);
         this.eventManager = new EventManager();
         this.moduleManager = new ModuleManager();
         this.commandManager = new CommandManager();
+        xyz.tharmsy.perception.utils.render.font.FontUtil.bootstrap();
 
         this.eventManager.register(this.moduleManager);
         this.eventManager.register(this.commandManager);
@@ -32,7 +33,7 @@ public class Perception {
 
     public void shutdown() {
         System.out.println("Shutting down " + NAME);
-       // clean.up() todo shit idk
+        // clean.up() todo shit idk
     }
 
     public EventManager getEventManager() {
