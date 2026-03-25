@@ -1,3 +1,15 @@
 # Project exclude paths
 /target/
 /.idea/
+
+# minecraft dogshit
+usercache.json
+/saves/
+/resourcepacks/
+/server-resource-packs/
+/logs/
+/crash-reports/
+options.txt
+optionsof.txt
+optionsshaders.txt
+/screenshots/
