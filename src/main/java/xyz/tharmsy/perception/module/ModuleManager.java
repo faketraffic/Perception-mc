@@ -10,7 +10,8 @@ public class ModuleManager {
     private final List<Module> modules = new ArrayList<>();
 
     public ModuleManager() {
-        // start modules here later
+        modules.add(new xyz.tharmsy.perception.module.impl.Sprint());
+        modules.add(new xyz.tharmsy.perception.module.impl.ClickGUIModule());
     }
 
     public List<Module> getModules() {

@@ -1,17 +1,30 @@
 package xyz.tharmsy.perception.module;
 
 import xyz.tharmsy.perception.Perception;
+import xyz.tharmsy.perception.settings.Setting;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Module {
     private String name;
     private String description;
     private int keybind;
     private boolean toggled;
+    private Category category;
+
+    private final List<Setting> settings = new ArrayList<>();
 
     public Module(String name, String description, int keybind) {
+        this(name, description, keybind, Category.RENDER);
+    }
+
+    public Module(String name, String description, int keybind, Category category) {
         this.name = name;
         this.description = description;
         this.keybind = keybind;
+        this.category = category;
     }
 
     public void onEnable() {
@@ -53,5 +66,17 @@ public class Module {
 
     public void setToggled(boolean toggled) {
         this.toggled = toggled;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void addSettings(Setting... settings) {
+        this.settings.addAll(Arrays.asList(settings));
+    }
+
+    public List<Setting> getSettings() {
+        return settings;
     }
 }
